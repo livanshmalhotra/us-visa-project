@@ -1,0 +1,14 @@
+transformers
+torch
+pandas
+numpy
+scikit-learn
+matplotlib
+pytest
+python-dotenv
+pyyaml
+pymongo
+fastapi
+uvicorn
+jinja2
+python-multipart
