@@ -426,7 +426,6 @@ HTML_TEMPLATE = """
         <div class="logo">US Visa Approval AI</div>
         <div class="header-actions">
             <span class="badge badge-healthy">API: HEALTHY</span>
-            <a href="/train" class="btn btn-secondary" onclick="alert('Training Pipeline initiated. This runs training, performs hyperparameter search, and registers the best model. Please wait up to a minute...')">Retrain Pipeline</a>
         </div>
     </header>
 
@@ -740,7 +739,7 @@ async def home_post(
         logging.error(f"Internal prediction error: {e}")
         return render_form(inputs_dict=form_inputs, error_msg=f"Prediction failed: Please ensure model is trained. ({str(e)})")
 
-@app.get("/train")
+@app.post("/train")
 async def train_pipeline_endpoint():
     try:
         pipeline = TrainPipeline()
